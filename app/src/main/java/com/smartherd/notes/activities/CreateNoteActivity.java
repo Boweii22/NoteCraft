@@ -277,10 +277,6 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         shared_preferences = getSharedPreferences("tutorial", Context.MODE_PRIVATE);
 
-        // Check if tutorial has been shown before
-        if (!shared_preferences.getBoolean("tutorial_shown", false)) {
-//            showTutorial();
-        }
 
 
 
@@ -404,7 +400,10 @@ public class CreateNoteActivity extends AppCompatActivity {
 //            reminderBackground.setVisibility(View.VISIBLE);
         }
 
-        new GuideView.Builder(this)
+
+        // Check if tutorial has been shown before
+        if (!shared_preferences.getBoolean("tutorial_shown", false)) {
+             new GuideView.Builder(this)
                 .setTitle("Translate")
                 .setContentText("Click to update translation")
                 .setGravity(smartdevelop.ir.eram.showcaseviewlib.config.Gravity.auto)
@@ -418,8 +417,8 @@ public class CreateNoteActivity extends AppCompatActivity {
                         nextSuggestion();
                     }
                 }).build().show();
+        }
 
-//bruhh
 
         //Initialize word count
         updateWordCount();
@@ -624,8 +623,6 @@ public class CreateNoteActivity extends AppCompatActivity {
                 .setGuideListener(new GuideListener() {
                     @Override
                     public void onDismiss(View view) {
-                        // Mark tutorial as shown
-                        sharedPreferences.edit().putBoolean("tutorial_shown", true).apply();
                         layoutMiscellaneousSuggestion();
                     }
                 }).build().show();
@@ -645,7 +642,6 @@ public class CreateNoteActivity extends AppCompatActivity {
                     public void onDismiss(View view) {
                         // Mark tutorial as shown
                         sharedPreferences.edit().putBoolean("tutorial_shown", true).apply();
-                        layoutMiscellaneousSuggestion();
                     }
                 }).build().show();
     }

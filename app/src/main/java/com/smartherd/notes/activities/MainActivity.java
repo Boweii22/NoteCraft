@@ -145,9 +145,9 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
 
         // Check if tutorial has been shown before
         if (!shared_preferences.getBoolean("tutorial_shown", false)) {
-//            showTutorial();
+            showTutorial();
         }
-        showTutorial();
+//        showTutorial();
 
         // Read the selected language code from SharedPreferences and log it
         SharedPreferences sharedPreferencess = getSharedPreferences("AppSettings", Context.MODE_PRIVATE);

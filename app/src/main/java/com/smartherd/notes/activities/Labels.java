@@ -125,9 +125,9 @@ public class Labels extends AppCompatActivity implements CustomAdapter.ItemClick
 
         // Check if tutorial has been shown before
         if (!shared_preferences.getBoolean("tutorial_shown", false)) {
-//            showTutorial();
+            showTutorial();
         }
-        showTutorial();
+//        showTutorial();
 
         updateLayoutBakground(isBlackTheme);
 

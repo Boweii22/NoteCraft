@@ -30,9 +30,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the main activity after the splash delay
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                startMainActivity();
             }
         }, SPLASH_DELAY);
         if (loadSwitchState()) {
@@ -42,17 +40,23 @@ public class SplashActivity extends AppCompatActivity {
                 @Override
                 public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                     super.onAuthenticationError(errorCode, errString);
-                    SplashActivity.this.finish(); // Close the app or navigate user accordingly
+                    // Show an error message or take appropriate action
+                    Toast.makeText(getApplicationContext(), "Biometric authentication error: " + errString, Toast.LENGTH_SHORT).show();
+                    // Close the app or navigate user accordingly
+                    SplashActivity.this.finish();
                 }
 
                 @Override
                 public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                     super.onAuthenticationSucceeded(result);
+                    // Start the main activity after successful authentication
+                    startMainActivity();
                 }
 
                 @Override
                 public void onAuthenticationFailed() {
                     super.onAuthenticationFailed();
+                    // Show an error message or take appropriate action
                     Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -70,5 +74,11 @@ public class SplashActivity extends AppCompatActivity {
     private boolean loadSwitchState() {
         SharedPreferences sharedPreferences = getSharedPreferences("BiometricPrefs", MODE_PRIVATE);
         return sharedPreferences.getBoolean("biometric_switch", false);
+    }
+
+    private void startMainActivity() {
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

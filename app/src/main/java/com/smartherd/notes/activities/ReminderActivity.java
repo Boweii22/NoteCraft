@@ -109,9 +109,9 @@ public class ReminderActivity extends AppCompatActivity implements NotesListener
 
         // Check if tutorial has been shown before
         if (!sharedPreferences.getBoolean("tutorial_shown", false)) {
-//            showTutorial();
+            showTutorial();
         }
-        showTutorial();
+//        showTutorial();
 
 
         futureTimeInMillis = DataHolder.getInstance().getData();

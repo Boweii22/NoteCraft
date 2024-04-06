@@ -106,9 +106,9 @@ public class MainTodo extends AppCompatActivity implements OnDialogCloseListener
 
         // Check if tutorial has been shown before
         if (!sharedPreferences.getBoolean("tutorial_shown", false)) {
-//            showTutorial();
+            showTutorial();
         }
-        showTutorial();
+//        showTutorial();
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 MainTodo.this, drawerLayout, materialToolbar, R.string.drawer_close, R.string.drawer_open);
