@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#000000</color>
+    <color name="textcolor">#FFFFFF</color>
+
+
+    <color name="colorQuickActionsBackgroundLight">#F2ECF6</color>
+
+</resources>

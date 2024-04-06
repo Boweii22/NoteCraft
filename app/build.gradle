@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    // Add the Google services Gradle plugin
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.smartherd.notes'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.smartherd.notes"
+        minSdk 19
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-firestore:24.10.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Room for database
+    implementation 'androidx.room:room-runtime:2.2.5'
+    annotationProcessor 'androidx.room:room-compiler:2.2.5'
+
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Scalable Size Unit (support for different screen sizes)
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    //Material Design
+    implementation 'com.google.android.material:material:1.1.0'
+
+
+    //Rounded ImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //For the color picker dialog
+    implementation 'com.github.yukuku:ambilwarna:2.0.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.4'
+
+
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:19.0.0'
+
+    implementation 'com.android.volley:volley:1.2.1'
+
+    //Add Google Translate API
+    implementation 'com.google.mlkit:translate:17.0.2'
+    implementation 'com.google.mlkit:language-id:17.0.5'
+
+    //For the lottiefiles audio animation
+    def lottieVersion = "4.2.2"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:32.7.3')
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'com.google.firebase:firebase-database:20.3.1'
+
+    implementation 'com.google.firebase:firebase-auth:22.3.1'
+    implementation 'com.firebaseui:firebase-ui-firestore:8.0.1'
+
+    implementation 'com.github.mreram:showcaseview:1.1'
+
+}

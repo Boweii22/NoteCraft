@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?> <!-- XML declaration specifies version, encoding -->
+<!-- Menu resource file starts here -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background_color"> <!-- Set background color for the menu -->
+
+    <!-- Group 1 for note-related actions -->
+    <group
+        android:id="@+id/group1">
+        <!-- Menu item for notes -->
+        <item
+            android:id="@+id/notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:title="Notes"
+            android:icon="@drawable/baseline_lightbulb_24"/>
+        <item
+            android:id="@+id/reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:title="Reminder"
+            android:icon="@drawable/baseline_add_alert_24"/>
+        <item
+            android:id="@+id/toDo"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textcolor"
+            android:layout_height="wrap_content"
+            android:title="To-do"
+            android:icon="@drawable/baseline_add_task_24"/>
+    </group>
+
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textcolor"
+            android:layout_height="wrap_content"
+            android:title="Label"
+            android:icon="@drawable/baseline_new_label_24"/>
+    </group>
+    <group android:id="@+id/group3">
+        <item
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:title="Settings"
+            android:icon="@drawable/baseline_settings_24"/>
+        <item
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textcolor"
+            android:layout_height="wrap_content"
+            android:title="Help/Feedback"
+            android:icon="@drawable/baseline_help_24"/>
+    </group>
+
+
+    <group android:id="@+id/group4">
+        <item
+            android:id="@+id/SignOut"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textcolor"
+            android:layout_height="wrap_content"
+            android:title="Sign Out" />
+    </group>
+
+</menu>

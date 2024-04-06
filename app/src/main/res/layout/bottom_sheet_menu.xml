@@ -1,0 +1,63 @@
+<!-- fragment_bottom_sheet.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1D1D1D">
+
+    <!--Features menu items -->
+    <TextView
+        android:id="@+id/label_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Label"
+        android:textColor="@color/white"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/image_to_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ImageToText"
+        android:textColor="@color/white"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/import_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import"
+        android:textColor="@color/white"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/export_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Export"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/speech_to_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speech To Text"
+        android:textColor="@color/white"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/text_summarize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Summarize"
+        android:padding="16dp" />
+    <TextView
+        android:id="@+id/text_generate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Generate Note"
+        android:padding="16dp" />
+
+    <!-- Add more menu items as needed -->
+
+</LinearLayout>

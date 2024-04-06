@@ -1,0 +1,113 @@
+<resources>
+    <!-- Application name, typically displayed on the home screen -->
+    <string name="app_name">Notes</string>
+    <!-- String resources for various UI elements and actions -->
+    <string name="my_notes">My Notes</string>
+    <string name="search_notes">Search notes</string>
+    <string name="note_title">Note Title</string>
+    <string name="type_note_here">Type note here...</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="pick_color">Pick \n Color</string>  <!-- Newline character for formatting -->
+    <string name="add_image">Add Image</string>
+    <string name="add_url">Add URL</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="add">ADD</string>
+    <string name="drawer_close">Close Drawer</string> <!-- Drawer refers to a UI component -->
+    <string name="drawer_open">Open Drawer</string>
+    <string name="theme">Theme</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="are_you_sure_you_want_to_delete_this_note">Are you sure you want to delete this note?</string>
+    <string name="cancel_dialog">Cancel</string>
+    <string name="add_task">ADD TASK</string>
+    <string name="enter_task">Enter Task</string>
+    <string name="search_tasks">Search tasks</string>
+    <string name="word_count">%d words</string> <!-- Placeholder %d for a dynamic number -->
+    <string name="note_subtitle">Note Subtitle</string>
+    <string name="todo">TODO</string>
+    <string name="_00_00">00:00</string> <!-- Typically used for time display -->
+    <string name="notes_with_upcoming_reminders_appear_here">Notes with upcoming reminders appear here</string>
+    <string name="reminders">Reminders</string>
+    <string name="search">Search</string>
+    <string name="general">General</string>
+    <string name="font">Font</string>
+    <string name="appearance">Appearance</string>
+    <string name="fullname">FullName</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="show_password">Show Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="emailPasswordReset">Email</string>
+    <string name="email_address_label">Email Address</string>
+    <string name="reset_info_text">Enter the email associated with your account \n and we will send an email with instructions to resset your password</string>
+    <string name="back">Back</string>
+    <string name="reset">Reset</string>
+    <!-- String-array resource for language options in the app -->
+    <string-array name="language_options">
+        <item></item> <!-- Empty item, possibly for default selection -->
+        <item>Afrikaans</item>
+        <item>Albanian</item>
+        <item>Arabic</item>
+        <item>Belarusian</item>
+        <item>Bengali</item>
+        <item>Bulgarian</item>
+        <item>Catalan</item>
+        <item>Chinese</item>
+        <item>Croatian</item>
+        <item>Czech</item>
+        <item>Danish</item>
+        <item>Dutch</item>
+        <item>English</item>
+        <item>Esperanto</item>
+        <item>Estonian</item>
+        <item>Finnish</item>
+        <item>French</item>
+        <item>Galician</item>
+        <item>Georgian</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>Gujarati</item>
+        <item>Haitian Creole</item>
+        <item>Hebrew</item>
+        <item>Hindi</item>
+        <item>Hungarian</item>
+        <item>Icelandic</item>
+        <item>Indonesian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Kannada</item>
+        <item>Korean</item>
+        <item>Latvian</item>
+        <item>Lithuanian</item>
+        <item>Macedonian</item>
+        <item>Malay</item>
+        <item>Maltese</item>
+        <item>Marathi</item>
+        <item>Norwegian</item>
+        <item>Persian</item>
+        <item>Polish</item>
+        <item>Portuguese</item>
+        <item>Romanian</item>
+        <item>Russian</item>
+        <item>Slovak</item>
+        <item>Slovenian</item>
+        <item>Somali</item>
+        <item>Spanish</item>
+        <item>Swahili</item>
+        <item>Swedish</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Ukrainian</item>
+        <item>Urdu</item>
+        <item>Vietnamese</item>
+        <item>Welsh</item>
+        <!-- Add more languages as needed -->
+    </string-array>
+
+    <string name="terms_conditions">By continuing to use our Android Notes App, you agree to the following terms: You are responsible for any content you create or upload using the app, and you must keep your account information secure. Respect copyright and intellectual property rights while using the app. Understand that the app is provided as is, without any warranty or guarantee, and we are not liable for any damages or losses resulting from its use. Your privacy is important to us, and your data won\'t be shared beyond the scope of this project. We value your feedback and suggestions for improving the app. Thank you for using our Android Notes App!
+</string>
+</resources>

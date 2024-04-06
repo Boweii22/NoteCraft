@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_gravity="center_vertical"
+    tools:context=".activities.LabelActivity">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/labelBackView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="@string/back"
+        android:tint="@color/colorIcons"/>
+
+    <ImageView
+        android:id="@+id/save_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_done"
+        app:tint="@color/colorIcons"
+        android:layout_alignParentEnd="true"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Labels"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15ssp"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="32dp"/>
+        
+        <EditText
+            android:id="@+id/inputLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_background"
+            android:hint="Create new label"
+            android:textColorHint="@color/colorTextHint"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose a color"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"/>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/layoutNoteColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor1"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_1"/>
+                    <ImageView
+                        android:id="@+id/imageColor1"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/ic_done"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor2"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_2"/>
+                    <ImageView
+                        android:id="@+id/imageColor2"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor3"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_3"/>
+                    <ImageView
+                        android:id="@+id/imageColor3"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor4"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_4"/>
+                    <ImageView
+                        android:id="@+id/imageColor4"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor5"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_5"/>
+                    <ImageView
+                        android:id="@+id/imageColor5"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor6"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_6"/>
+                    <ImageView
+                        android:id="@+id/imageColor6"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor7"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_7"/>
+                    <ImageView
+                        android:id="@+id/imageColor7"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor8"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_8"/>
+                    <ImageView
+                        android:id="@+id/imageColor8"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor9"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_9"/>
+                    <ImageView
+                        android:id="@+id/imageColor9"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColor10"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/background_note_color_10"/>
+                    <ImageView
+                        android:id="@+id/imageColor10"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewColorPicker"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/colorwheel"/>
+                    <ImageView
+                        android:id="@+id/imageColorPicker"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_10sdp"
+                        app:tint="@color/white" />
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Your labels"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="@dimen/_12sdp"-->
+<!--            android:layout_marginBottom="@dimen/_12sdp"-->
+<!--            android:textSize="@dimen/_15ssp" />-->
+
+<!--        &lt;!&ndash; RecyclerView for Labels &ndash;&gt;-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/labelRecyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/_2sdp"-->
+<!--            android:layout_marginEnd="@dimen/_2sdp"-->
+<!--            android:clipToPadding="false"-->
+<!--            android:paddingStart="0dp"-->
+<!--            android:paddingEnd="@dimen/_12sdp"-->
+<!--            android:paddingBottom="@dimen/_12sdp" />-->
+<!--        <ListView-->
+<!--            android:id="@+id/tagsListView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="@dimen/_12sdp"-->
+<!--            android:layout_height="wrap_content" />-->
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorIcons"
+        android:textSize="@dimen/_10ssp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+</RelativeLayout>

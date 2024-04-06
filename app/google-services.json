@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "635998823179",
+    "project_id": "notecraft-dd55e",
+    "storage_bucket": "notecraft-dd55e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635998823179:android:4e82450a26ab3b7cc4780e",
+        "android_client_info": {
+          "package_name": "com.smartherd.notes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc9R2Dd_EJjYnZkIMA_7eLpgZooOhE2AY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

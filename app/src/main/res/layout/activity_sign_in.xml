@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewSignyou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lets Sign you in"
+        android:textColor="@color/main_color"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/textViewWelcomeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back ,\nYou have been missed"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/textViewSignyou"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextEmailPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="@color/colorIcons"
+        android:textColor="@color/white"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/email_and_password_background"
+        android:layout_below="@id/textViewWelcomeBack"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/colorIcons"
+        android:background="@drawable/email_and_password_background"
+        android:inputType="textPassword"
+        android:layout_below="@id/editTextEmailPhone"
+        android:layout_marginTop="@dimen/_12sdp"/>
+
+    <CheckBox
+        android:id="@+id/showPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Password"
+        android:textColor="@color/colorIcons"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="8dp"
+        android:buttonTint="@color/main_color"/>
+
+    <TextView
+        android:id="@+id/textViewForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:textColor="@color/white"
+        android:background="@drawable/register_button_background"
+        android:layout_below="@id/textViewForgotPassword"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:layout_below="@id/buttonSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+
+    <TextView
+        android:id="@+id/textViewNoAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Don’t have an account?"
+        android:layout_below="@id/buttonSignIn"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="16dp"/>
+
+
+    <TextView
+        android:id="@+id/textViewRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/main_color"
+        android:layout_marginStart="160dp"
+        android:text="Register Now"
+        android:layout_below="@id/buttonSignIn"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

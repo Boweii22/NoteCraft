@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_gravity="center_vertical"
+    tools:context=".activities.Labels">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/back_to_create_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="@string/back"/>
+
+    <TextView
+        android:id="@+id/textMyLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Labels"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15ssp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="32dp"/>
+    <LinearLayout
+        android:id="@+id/layoutSearchLabels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textMyLabels"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/searchLabels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_background"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Search Labels"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp" />
+
+        </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/layoutSearchLabels"
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_below="@id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:id="@+id/label_info"
+        android:layout_margin="@dimen/_10sdp"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/baseline_label_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Labels will appear \n here when created"/>
+    </LinearLayout>
+
+</RelativeLayout>

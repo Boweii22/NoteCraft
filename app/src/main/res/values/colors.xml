@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#292929</color>
+    <color name="colorPrimaryDark">#292929</color>
+    <color name="colorAccent">#FFE01B</color>
+    <color name="colorSearchIcon">#DBDBDB</color>
+    <color name="colorTextHint">#7B7B7B</color>
+    <color name="colorQuickActionsBackground">#1D1D1D</color>
+    <color name="colorIcons">#A4A4A4</color>
+    <color name="colorTextSubtitle">#CECECE</color>
+    <color name="colorDefaultNoteColor">#333333</color>
+    <color name="colorNoteSubtitleText">#FAFAFA</color>
+    <color name="colorMiscellaneousBackground">#1D1D1D</color>
+    <color name="colorNoteColor2">#008080</color>
+    <color name="colorNoteColor3">#FF4842</color>
+    <color name="colorNoteColor4">#3A52Fc</color>
+    <color name="colorNoteColor5">#000000</color>
+    <color name="colorNoteColor6">#0E7337</color>
+    <color name="colorNoteColor7">#FFA500</color>
+    <color name="colorNoteColor8">#A020F0</color>
+    <color name="colorNoteColor9">#FFD700</color>
+    <color name="colorNoteColor10">#6f432a</color>
+    <color name="colorDelete">#FF4842</color>
+    <color name="colorSearchBackground">#1D1D1D</color>
+    <color name="colorTaskBackground">#1D1D1D</color>
+    <color name="main_color">#008080</color>
+
+    <color name="background_color">#FFFFFF</color>
+    <color name="textcolor">#000000</color>
+</resources>
