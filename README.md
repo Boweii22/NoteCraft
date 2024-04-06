@@ -8,11 +8,10 @@ Features: #features
 Technology Stack: #technology-stack
 Setup and Installation: #setup-and-installation
 Usage: #usage
-Screenshots: #screenshots (Optional)
-Contributing: #contributing (Optional)
-License: #license
-Project Overview
+Screenshots: #screenshots
 
+
+Project Overview
 NoteCraft is an Android application developed as a final year project to provide a user-friendly and feature-rich platform for capturing, organizing, and managing your notes.
 This app is designed to be a versatile and user-friendly note-taking solution for anyone who wants to capture, organize, and access their ideas on the go. Whether you're a student
 managing class notes and assignments, a busy professional keeping track of projects and meetings, or someone who simply wants a convenient way to jot down thoughts and inspirations,
