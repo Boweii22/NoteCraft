@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.smartherd.notes.R;
+import com.smartherd.notes.activities.DataHolder;
 import com.smartherd.notes.entities.TagWithDateTime;
 
 import java.util.ArrayList;
@@ -53,10 +54,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         GradientDrawable gradientDrawable = (GradientDrawable) holder.layoutLabel.getBackground();
 
-        if(item.getColor() != null){
-            gradientDrawable.setColor(Color.parseColor(item.getColor()));
-        }else {
-            gradientDrawable.setColor(Color.parseColor("#333333"));
+        if (item.getColor() != null) {
+//                gradientDrawable.setColor(Color.parseColor(note.getColor()));
+            gradientDrawable.setStroke(3, Color.parseColor(item.getColor()));
+            DataHolder.getInstance().setLabelColor(item.getColor());
+        } else {
+//                gradientDrawable.setColor(Color.parseColor("#333333"));
+            gradientDrawable.setStroke(3, Color.parseColor("#333333"));
         }
 
         holder.layoutLabel.setOnLongClickListener(new View.OnLongClickListener() {

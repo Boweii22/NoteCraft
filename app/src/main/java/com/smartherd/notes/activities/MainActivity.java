@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
 
     // Translation and SharedPreferences components.
     private ProgressDialog progressDialog;
+    private ProgressDialog logoutProgress;
     private Translator translator;
     private SharedPreferences sharedPreferences;
     private SharedPreferences shared_preferences;
@@ -338,6 +339,22 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
         // notesAdapter.getFilter().filter(s.toString());
         // }
         // });
+    }
+
+    // Method to dismiss progress dialog
+    private void dismissProgressDialog() {
+        if (logoutProgress != null && logoutProgress.isShowing()) {
+            logoutProgress.dismiss();
+        }
+    }
+    // Method to show progress dialog
+    private void showProgressDialog() {
+        if (logoutProgress == null) {
+            logoutProgress = new ProgressDialog(this);
+            logoutProgress.setMessage("Logging out...");
+            logoutProgress.setIndeterminate(true);
+        }
+        logoutProgress.show();
     }
 
     private void showTutorial() {

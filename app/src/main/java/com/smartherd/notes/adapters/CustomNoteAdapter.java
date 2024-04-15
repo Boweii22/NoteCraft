@@ -43,10 +43,12 @@ public class CustomNoteAdapter extends RecyclerView.Adapter<CustomNoteAdapter.Vi
 
         Note note1 = new Note();
         GradientDrawable gradientDrawable = (GradientDrawable) holder.layoutNote.getBackground();
-        if(note1.getColor() != null){
-            gradientDrawable.setColor(Color.parseColor(DataHolder.getInstance().getSubtitleIndicatorColor()));
-        }else {
-            gradientDrawable.setColor(Color.parseColor("#333333"));
+        if (DataHolder.getInstance().getLabelColor() != null) {
+//                gradientDrawable.setColor(Color.parseColor(note.getColor()));
+            gradientDrawable.setStroke(3, Color.parseColor(DataHolder.getInstance().getLabelColor()));
+        } else {
+//                gradientDrawable.setColor(Color.parseColor("#333333"));
+            gradientDrawable.setStroke(3, Color.parseColor("#333333"));
         }
 
     }

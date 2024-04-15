@@ -25,6 +25,7 @@ public class DataHolder {
     private String noteColor;
     private String subtitleIndicatorColor;
     private String documentContent;
+    private String labelColor;
     private DataHolder() {
     }
 
@@ -149,5 +150,13 @@ public class DataHolder {
 
     public void setDocumentContent(String documentContent) {
         this.documentContent = documentContent;
+    }
+
+    public String getLabelColor() {
+        return labelColor;
+    }
+
+    public void setLabelColor(String labelColor) {
+        this.labelColor = labelColor;
     }
 }

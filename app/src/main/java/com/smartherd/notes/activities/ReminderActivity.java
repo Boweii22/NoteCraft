@@ -3,6 +3,7 @@ package com.smartherd.notes.activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -13,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -29,6 +32,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +41,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -75,6 +80,8 @@ public class ReminderActivity extends AppCompatActivity implements NotesListener
     public static final int REQUEST_CODE_UPDATE_NOTE = 2; //The request code is used to update note
     long futureTimeInMillis;
     long currentTimeInMillis;
+    ProgressDialog logoutProgress;
+    FirebaseAuth mAuth;
     private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +103,7 @@ public class ReminderActivity extends AppCompatActivity implements NotesListener
         inputSearch = findViewById(R.id.inputSearch);
         info = findViewById(R.id.info);
 
+        mAuth = FirebaseAuth.getInstance();
 
         notesReminderRecyclerView = findViewById(R.id.notesReminderRecyclerView);
         setupRecyclerView();
@@ -152,6 +160,28 @@ public class ReminderActivity extends AppCompatActivity implements NotesListener
                 } else if (item.getItemId() == R.id.help) {
                     Toast.makeText(ReminderActivity.this, "Help&Feedback", Toast.LENGTH_SHORT).show();
                     drawerLayout.closeDrawer(GravityCompat.START);
+                }else if (item.getItemId() == R.id.SignOut) {
+                    // Build the alert dialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ReminderActivity.this);
+                    builder.setMessage("Are you sure you want to logout?")
+                            .setTitle("Logout")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // User clicked Yes button, proceed with logout
+                                    mAuth.signOut();
+                                    signOut();
+                                    // You can add any additional actions after logout if needed
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // User clicked No button, dismiss the dialog and do nothing
+                                    dialog.dismiss();
+                                }
+                            });
+                    // Show the dialog
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }
                 return false;
             }
@@ -159,6 +189,20 @@ public class ReminderActivity extends AppCompatActivity implements NotesListener
         updateLayoutBackground(isBlackTheme); // Call this method to set the LinearLayout background based on the theme
 
 
+    }
+
+    private void signOut() {
+        Intent intent = new Intent(ReminderActivity.this, SignInActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    private void showProgressDialog() {
+        if (logoutProgress == null) {
+            logoutProgress = new ProgressDialog(this);
+            logoutProgress.setMessage("Logging out...");
+            logoutProgress.setIndeterminate(true);
+        }
+        logoutProgress.show();
     }
 
     private void showTutorial() {

@@ -3,6 +3,7 @@ package com.smartherd.notes.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,6 +33,7 @@ import android.widget.Toast;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.smartherd.notes.Adapter.ToDoAdapter;
 import com.smartherd.notes.Model.ToDoModel;
 import com.smartherd.notes.R;
@@ -65,6 +68,8 @@ public class MainTodo extends AppCompatActivity implements OnDialogCloseListener
     LinearLayout layoutSearch;
     TextView tasksTextView;
     EditText inputTaskSearch;
+    ProgressDialog logoutProgress;
+    FirebaseAuth mAuth;
     private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +98,7 @@ public class MainTodo extends AppCompatActivity implements OnDialogCloseListener
         myDB = new DataBaseHelper(MainTodo.this);
         mList = new ArrayList<>();
         adapter = new ToDoAdapter(myDB, MainTodo.this);
+        mAuth = FirebaseAuth.getInstance();
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -151,6 +157,28 @@ public class MainTodo extends AppCompatActivity implements OnDialogCloseListener
                     startActivity(intent);
                     finish();
                     drawerLayout.closeDrawer(GravityCompat.START);
+                }else if (item.getItemId() == R.id.SignOut) {
+                    // Build the alert dialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainTodo.this);
+                    builder.setMessage("Are you sure you want to logout?")
+                            .setTitle("Logout")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // User clicked Yes button, proceed with logout
+                                    mAuth.signOut();
+                                    signOut();
+                                    // You can add any additional actions after logout if needed
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // User clicked No button, dismiss the dialog and do nothing
+                                    dialog.dismiss();
+                                }
+                            });
+                    // Show the dialog
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }
                 return false;
             }
@@ -186,6 +214,20 @@ public class MainTodo extends AppCompatActivity implements OnDialogCloseListener
         });
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerViewTouchHelper(adapter));
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
+    }
+
+    private void signOut() {
+        Intent intent = new Intent(MainTodo.this, SignInActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    private void showProgressDialog() {
+        if (logoutProgress == null) {
+            logoutProgress = new ProgressDialog(this);
+            logoutProgress.setMessage("Logging out...");
+            logoutProgress.setIndeterminate(true);
+        }
+        logoutProgress.show();
     }
 
     private void showTutorial() {

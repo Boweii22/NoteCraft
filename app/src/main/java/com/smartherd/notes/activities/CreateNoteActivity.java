@@ -128,7 +128,7 @@ public class CreateNoteActivity extends AppCompatActivity {
 
     private final String stringURLEndPoint = "https://api.openai.com/v1/chat/completions";
 
-    private final String API_KEY = "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";
+    private final String API_KEY = "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";
 
     private String stringOutput = "";
     private String stringOutput1 = "";
